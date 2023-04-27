@@ -9,7 +9,7 @@
 </script>
 
 <svelte:head>
-	<title>NBA Playoffs Bracket</title>
+	<title>NBA Playoffs</title>
 </svelte:head>
 
 <main class="p-4 flex flex-col items-center">
