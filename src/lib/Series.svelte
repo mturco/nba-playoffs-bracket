@@ -12,10 +12,26 @@
 			4: 'finals',
 		}[series.roundNumber];
 	}
+
+	function getSeriesLabel() {
+		return (
+			{
+				1: 'First Round',
+				2: 'Conf. Semifinals',
+				3: 'Conf. Finals',
+				4: 'Finals',
+			}[series.roundNumber] ?? ''
+		);
+	}
 </script>
 
-<div style={`grid-area: ${getGridArea()}`}>
-	<div class="inline-flex flex-col rounded-md overflow-hidden shadow-lg">
+<div style={`grid-area: ${getGridArea()}`} class="relative w-fit">
+	<span class="absolute bottom-full text-xs uppercase font-medium text-gray-500 text-center w-full"
+		>{getSeriesLabel()}</span
+	>
+	<div
+		class="inline-flex flex-col rounded-md overflow-hidden shadow-lg bg-gray-200 dark:bg-gray-700"
+	>
 		{#if series.displayTopTeam === series.highSeedId}
 			<TeamCard
 				team={series.highSeedTricode}
