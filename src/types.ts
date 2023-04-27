@@ -10,6 +10,8 @@ export interface PlayoffBracketSeries {
 	seriesNumber: number;
 	seriesWinner: number;
 	displayOrderNumber: number;
+	displayTopTeam: number;
+	displayBottomTeam: number;
 
 	highSeedId: number;
 	highSeedTricode: string | null;

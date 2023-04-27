@@ -6,19 +6,23 @@
 
 	function getGridArea() {
 		return {
-			1: `r1-${series.seriesNumber}`,
-			2: `csf-${series.seriesNumber}`,
-			3: `cf-${series.seriesNumber}`,
+			1: `r1-${series.displayOrderNumber}`,
+			2: `csf-${series.displayOrderNumber}`,
+			3: `cf-${series.displayOrderNumber}`,
 			4: 'finals',
 		}[series.roundNumber];
 	}
 </script>
 
 <div style={`grid-area: ${getGridArea()}`}>
-	<!-- class={series.roundNumber === 4 ? 'place-self-center' : ''} -->
 	<div class="inline-flex flex-col rounded-md overflow-hidden shadow-lg">
-		<TeamCard team={series.highSeedTricode} rank={series.highSeedRank} />
-		<TeamCard team={series.lowSeedTricode} rank={series.lowSeedRank} />
+		{#if series.displayTopTeam === series.highSeedId}
+			<TeamCard team={series.highSeedTricode} rank={series.highSeedRank} />
+			<TeamCard team={series.lowSeedTricode} rank={series.lowSeedRank} />
+		{:else}
+			<TeamCard team={series.lowSeedTricode} rank={series.lowSeedRank} />
+			<TeamCard team={series.highSeedTricode} rank={series.highSeedRank} />
+		{/if}
 	</div>
 </div>
 
