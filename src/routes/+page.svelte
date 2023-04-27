@@ -5,12 +5,7 @@
 
 	export let data: PageData;
 
-	function getTeamClasses(team: string) {
-		const bg = `bg-${team}-bg`;
-		const border =
-			team !== 'BKN' ? `border-t-transparent border-${team}-border border-b-4 border-t-4` : '';
-		return `${bg} ${border} box-border p-3 rounded-md m-1 shadow-lg w-48 h-14`;
-	}
+	const year = parseInt(data.seasonYear, 10) + 1;
 </script>
 
 <svelte:head>
@@ -18,7 +13,7 @@
 </svelte:head>
 
 <main class="p-4 flex flex-col items-center">
-	<h1 class="text-4xl">{data.seasonYear} NBA Playoffs</h1>
+	<h1 class="text-4xl">{year} NBA Playoffs</h1>
 
 	<Bracket>
 		{#each data.firstRound as series}
