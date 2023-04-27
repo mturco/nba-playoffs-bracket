@@ -4,7 +4,7 @@
 	div {
 		display: grid;
 		grid-template-columns: 6rem 10rem 6rem 6rem 10rem 6rem 12rem;
-		grid-template-rows: 8rem 8rem 2rem 8rem 2rem 8rem 8rem 8rem;
+		grid-template-rows: 7rem 7rem 2rem 7rem 2rem 7rem 7rem 7rem;
 		grid-template-areas:
 			'r1-0  r1-0  .      .      .      .     r1-4'
 			'.     csf-0 csf-0  .      .      csf-2 csf-2'
