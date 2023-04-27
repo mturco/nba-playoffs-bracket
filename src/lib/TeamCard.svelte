@@ -1,6 +1,7 @@
 <script lang="ts">
 	export let team: string | null;
 	export let rank: number;
+	export let wins: number;
 
 	const invertTeams = ['BKN', 'BOS', 'CHA', 'DEN', 'IND', 'LAL', 'MIN', 'NOP', 'SAS'];
 
@@ -20,25 +21,24 @@
 	}
 </script>
 
-<div
-	class={`${getTeamClasses(team)} box-border w-48 h-16 flex items-center overflow-hidden relative`}
->
+<div class={`${getTeamClasses(team)} box-border w-48 h-16 overflow-hidden relative`}>
 	{#if team}
-		<div class="p-3">
-			<span class="text-white/40 text-sm mr-1.5">{rank}</span>
+		<div class="p-3 flex items-center h-full">
+			<span class="text-white/40 text-sm mr-2">{rank}</span>
 			<span class="text-white font-medium">{team}</span>
+			<span class="text-white text-xl ml-auto">{wins}</span>
 		</div>
 		<img
 			src={`/teams/${team}-bw.svg`}
 			alt={`${team} logo`}
-			class={`${getLogoClasses(team)} absolute inset-0 w-2/3 h-full object-cover ml-auto`}
+			class={`${getLogoClasses(team)} absolute inset-0 w-2/3 h-full object-cover mx-auto`}
 		/>
 	{/if}
 </div>
 
 <style>
 	img {
-		object-position: right 33.33333%;
+		object-position: center 33.33333%;
 		opacity: 0.15;
 	}
 

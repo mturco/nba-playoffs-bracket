@@ -18,7 +18,7 @@
 </svelte:head>
 
 <main class="p-4 flex flex-col items-center">
-	<h1>{data.seasonYear}</h1>
+	<h1 class="text-4xl">{data.seasonYear} NBA Playoffs</h1>
 
 	<Bracket>
 		{#each data.firstRound as series}

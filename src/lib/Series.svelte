@@ -17,11 +17,27 @@
 <div style={`grid-area: ${getGridArea()}`}>
 	<div class="inline-flex flex-col rounded-md overflow-hidden shadow-lg">
 		{#if series.displayTopTeam === series.highSeedId}
-			<TeamCard team={series.highSeedTricode} rank={series.highSeedRank} />
-			<TeamCard team={series.lowSeedTricode} rank={series.lowSeedRank} />
+			<TeamCard
+				team={series.highSeedTricode}
+				rank={series.highSeedRank}
+				wins={series.highSeedSeriesWins}
+			/>
+			<TeamCard
+				team={series.lowSeedTricode}
+				rank={series.lowSeedRank}
+				wins={series.lowSeedSeriesWins}
+			/>
 		{:else}
-			<TeamCard team={series.lowSeedTricode} rank={series.lowSeedRank} />
-			<TeamCard team={series.highSeedTricode} rank={series.highSeedRank} />
+			<TeamCard
+				team={series.lowSeedTricode}
+				rank={series.lowSeedRank}
+				wins={series.lowSeedSeriesWins}
+			/>
+			<TeamCard
+				team={series.highSeedTricode}
+				rank={series.highSeedRank}
+				wins={series.highSeedSeriesWins}
+			/>
 		{/if}
 	</div>
 </div>
