@@ -23,7 +23,20 @@ export interface PlayoffBracketSeries {
 	lowSeedRank: number;
 	lowSeedSeriesWins: number;
 
+	nextGameId: string;
+	nextGameNumber: string;
 	nextGameDateTimeUTC: string;
 	nextGameStatus: number;
 	nextGameStatusText: string;
+	nextGameBroadcasterDisplay: string;
+}
+
+export interface Game {
+	id: string;
+	number: string;
+	statusText: string;
+	dateTimeUtc: string;
+	broadcaster: string;
+	highSeedTricode: string | null;
+	lowSeedTricode: string | null;
 }

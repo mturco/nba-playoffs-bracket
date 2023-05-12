@@ -2,6 +2,7 @@
 	import type { PageData } from './$types';
 	import Bracket from '../lib/Bracket.svelte';
 	import Series from '../lib/Series.svelte';
+	import Games from '$lib/Games.svelte';
 
 	export let data: PageData;
 
@@ -16,19 +17,14 @@
 	<h1 class="text-6xl mt-12 mb-16 font-light">{year} NBA Playoffs</h1>
 
 	<Bracket>
-		{#each data.firstRound as series}
-			<Series {series} />
-		{/each}
-		{#each data.confSemiFinals as series}
-			<Series {series} />
-		{/each}
-		{#each data.confFinals as series}
-			<Series {series} />
-		{/each}
-		{#each data.finals as series}
+		{#each data.series as series}
 			<Series {series} />
 		{/each}
 	</Bracket>
+
+	<div class="mt-32">
+		<Games games={data.nextGames} />
+	</div>
 </main>
 
 <style>
