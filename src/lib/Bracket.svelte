@@ -3,8 +3,8 @@
 <style>
 	div {
 		display: grid;
-		grid-template-columns: 6rem 12rem 6rem 6rem 12rem 6rem 12rem;
-		grid-template-rows: 7rem 7rem 2rem 7rem 2rem 7rem 7rem 7rem;
+		grid-template-columns: 5rem 10rem 5rem 5rem 10rem 5rem 10rem;
+		grid-template-rows: 6rem 6rem 2rem 6rem 2rem 6rem 6rem 6rem;
 		grid-template-areas:
 			'r1-0  r1-0  .      .      .      .     r1-4'
 			'.     csf-0 csf-0  .      .      csf-2 csf-2'

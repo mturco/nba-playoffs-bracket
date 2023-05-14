@@ -21,7 +21,7 @@
 	}
 </script>
 
-<div class={`${getTeamClasses(team)} box-border w-48 h-14 overflow-hidden relative`}>
+<div class={`${getTeamClasses(team)} box-border w-40 h-12 overflow-hidden relative`}>
 	{#if team}
 		<div class="p-3 flex items-center h-full">
 			<span class="text-white/40 text-sm mr-2">{rank}</span>
