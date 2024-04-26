@@ -25,34 +25,38 @@
 	}
 </script>
 
-<div style={`grid-area: ${getGridArea()}`} class="relative w-fit">
+<div style={`grid-area: ${getGridArea()}`} class="relative w-fit self-center">
 	<span class="absolute bottom-full text-xs uppercase font-medium text-gray-500 text-center w-full"
 		>{getSeriesLabel()}</span
 	>
 	<div
-		class="inline-flex flex-col rounded-md overflow-hidden shadow-lg bg-gray-200 dark:bg-gray-700"
+		class="inline-flex flex-col rounded-md overflow-hidden shadow-lg bg-gray-300 dark:bg-gray-700"
 	>
 		{#if series.displayTopTeam === series.highSeedId}
 			<TeamCard
 				team={series.highSeedTricode}
 				rank={series.highSeedRank}
 				wins={series.highSeedSeriesWins}
+				isFinals={getGridArea() === 'finals'}
 			/>
 			<TeamCard
 				team={series.lowSeedTricode}
 				rank={series.lowSeedRank}
 				wins={series.lowSeedSeriesWins}
+				isFinals={getGridArea() === 'finals'}
 			/>
 		{:else}
 			<TeamCard
 				team={series.lowSeedTricode}
 				rank={series.lowSeedRank}
 				wins={series.lowSeedSeriesWins}
+				isFinals={getGridArea() === 'finals'}
 			/>
 			<TeamCard
 				team={series.highSeedTricode}
 				rank={series.highSeedRank}
 				wins={series.highSeedSeriesWins}
+				isFinals={getGridArea() === 'finals'}
 			/>
 		{/if}
 	</div>

@@ -2,8 +2,13 @@
 	export let team: string | null;
 	export let rank: number;
 	export let wins: number;
+	export let isFinals = false;
 
 	const invertTeams = ['BKN', 'BOS', 'CHA', 'DEN', 'IND', 'LAL', 'MIN', 'NOP', 'SAS'];
+
+	function getSizeClasses() {
+		return isFinals ? 'w-56 h-16' : 'w-40 h-11';
+	}
 
 	function getTeamClasses(team: string | null) {
 		if (!team) return '';
@@ -21,7 +26,7 @@
 	}
 </script>
 
-<div class={`${getTeamClasses(team)} box-border w-40 h-12 overflow-hidden relative`}>
+<div class={`${getTeamClasses(team)} ${getSizeClasses()} box-border overflow-hidden relative`}>
 	{#if team}
 		<div class="p-3 flex items-center h-full">
 			<span class="text-white/40 text-sm mr-2">{rank}</span>

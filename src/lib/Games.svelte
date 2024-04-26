@@ -15,7 +15,9 @@
 
 		<ol class="mb-8 flex gap-4">
 			{#each gamesForDate as game}
-				<li class="p-4 rounded-md shadow-md bg-gray-200 dark:bg-gray-700">
+				<li
+					class="p-4 rounded-md border-2 bg-gray-100 border-gray-300 dark:border-gray-500 dark:bg-gray-700"
+				>
 					<p>
 						<span class="font-medium">{game.highSeedTricode || '???'}</span> vs
 						<span class="font-medium">{game.lowSeedTricode || '???'}</span>
