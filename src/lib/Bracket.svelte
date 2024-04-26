@@ -3,7 +3,7 @@
 <style>
 	div {
 		display: grid;
-		grid-template-columns: 4rem 7rem 10rem 14rem 7rem 4rem 10rem;
+		grid-template-columns: 4rem 6rem 10rem 14rem 6rem 4rem 10rem;
 		grid-template-rows: 6rem 6rem 6rem 1rem 6rem 6rem 6rem;
 		grid-template-areas:
 			'r1-0  r1-0  .      .      .      .     r1-4'

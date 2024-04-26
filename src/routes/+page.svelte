@@ -14,7 +14,7 @@
 </svelte:head>
 
 <main class="p-4 flex flex-col items-center">
-	<h1 class="text-6xl mt-20 -mb-40 font-light text-center">{year}<br />NBA Playoffs</h1>
+	<h1 class="text-6xl mt-16 -mb-40 font-light text-center">{year}<br />NBA Playoffs</h1>
 
 	<Bracket>
 		{#each data.series as series}
@@ -22,7 +22,7 @@
 		{/each}
 	</Bracket>
 
-	<div class="mt-24">
+	<div class="mt-16 pt-8 border-t-2 border-gray-300">
 		<Games games={data.nextGames} />
 	</div>
 </main>
