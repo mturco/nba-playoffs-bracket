@@ -3,16 +3,13 @@
 <style>
 	div {
 		display: grid;
-		grid-template-columns: 4rem 6rem 10rem 14rem 6rem 4rem 10rem;
-		grid-template-rows: 6rem 6rem 6rem 1rem 6rem 6rem 6rem;
+		grid-template-columns: repeat(3, 8rem) 12rem repeat(3, 8rem);
+		grid-template-rows: repeat(4, 6rem);
 		grid-template-areas:
-			'r1-0  r1-0  .      .      .      .     r1-4'
-			'.     csf-0 csf-0  .      .      csf-2 csf-2'
-			'r1-1  r1-1  .      .      .      .     r1-5'
-			'.     .     cf-0   finals cf-1   .     .    '
-			'r1-2  r1-2  .      .      .      .     r1-6'
-			'.     csf-1 csf-1  .      .      csf-3 csf-3'
-			'r1-3  r1-3  .      .      .      .     r1-7';
-		gap: 1rem;
+			'r1-0  csf-0 .      .      .      csf-2 r1-4'
+			'r1-1  csf-0 cf-0   finals cf-1   csf-2 r1-5'
+			'r1-2  csf-1 cf-0   finals cf-1   csf-3 r1-6'
+			'r1-3  csf-1 .      .      .      csf-3 r1-7';
+		gap: 2rem 0.5rem;
 	}
 </style>

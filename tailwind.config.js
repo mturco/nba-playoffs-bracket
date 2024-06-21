@@ -41,7 +41,7 @@ export default {
 	safelist: [
 		{
 			pattern:
-				/(bg|border|text)-(MIA|LAL|BOS|LAC|BKN|CHA|CHI|ATL|PHX|DAL|DEN|DET|GSW|HOU|IND|MEM|MIL|MIN|NOP|NYK|OKC|ORL|PHI|POR|SAC|SAS|TOR|UTA|CLE|WAS)(-|$)/,
+				/(bg|border|text|shadow)-(MIA|LAL|BOS|LAC|BKN|CHA|CHI|ATL|PHX|DAL|DEN|DET|GSW|HOU|IND|MEM|MIL|MIN|NOP|NYK|OKC|ORL|PHI|POR|SAC|SAS|TOR|UTA|CLE|WAS)(-|$)/,
 		},
 	],
 };
