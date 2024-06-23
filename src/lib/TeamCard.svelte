@@ -5,7 +5,6 @@
 	export let isFinals = false;
 	export let isTop = false;
 
-	const invertTeams = ['BKN', 'BOS', 'CHA', 'DEN', 'IND', 'LAL', 'MIN', 'NOP', 'SAS'];
 	// prettier-ignore
 	const eastTeams = ['ATL','BKN','BOS','CHA','CHI','CLE','DET','IND','MIA','MIL','NYK','ORL','PHI','TOR','WAS'];
 
@@ -15,14 +14,12 @@
 
 	function getLogoClasses() {
 		if (!team) return '';
-
-		const blend = invertTeams.includes(team) ? 'mix-blend-lighten' : 'mix-blend-darken';
-		return `${blend} override-${team}`;
+		return `override-${team}`;
 	}
 
-	function getBorderClasses(team: string | null, wins: number) {
+	function getTeamClasses(team: string | null, wins: number) {
 		if (!team) return '';
-		return `border-${team}-bg`;
+		return `border-${team}-bg bg-${team}-bg/20`;
 	}
 
 	function getProgressClasses(team: string | null, wins: number) {
@@ -39,10 +36,10 @@
 	}
 </script>
 
-<div class={`${getSizeClasses()} ${getBorderClasses(team, wins)} relative`}>
+<div class={`${getSizeClasses()} ${getTeamClasses(team, wins)} relative`}>
 	{#if team}
 		<div class="p-3 flex-1 flex items-center h-full relative z-10">
-			<span class="text-white/40 text-sm mr-2">{rank}</span>
+			<span class="text-black/60 dark:text-white/60 text-xs mr-2">{rank}</span>
 			<span class="font-medium">{team}</span>
 			<span class="ml-auto font-medium">{wins}</span>
 			<span class={`wins-progress absolute -z-10 ${getProgressClasses(team, wins)}`} />
@@ -50,7 +47,7 @@
 		<img
 			src={`/teams/${team}-bw.svg`}
 			alt={`${team} logo`}
-			class={`${getLogoClasses()} absolute inset-0 w-2/3 h-full object-cover mx-auto`}
+			class={`${getLogoClasses()} absolute top-0 bottom-0 right-0 w-2/3 h-full object-cover mx-auto`}
 		/>
 	{/if}
 </div>
@@ -58,18 +55,7 @@
 <style>
 	img {
 		object-position: center 33.33333%;
-		opacity: 0.15;
-	}
-
-	.override-CHI,
-	.override-PHX {
-		opacity: 0.25;
-	}
-
-	.override-DEN,
-	.override-MIN,
-	.override-LAL {
-		opacity: 0.1;
+		opacity: 0.08;
 	}
 
 	.wins-progress-west {
